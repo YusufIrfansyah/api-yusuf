@@ -3,10 +3,10 @@ import styles from '@/styles/Home.module.css'
 import { useState, useEffect } from 'react'
 import axios from "axios";
 
-function Dogs({ imglink }) {
+function Collection({ imgData }) {
   return <>
   <div className={styles.dogContainer}>
-    {imglink.map((items, itemIn)=> { 
+    {imgData.map((items, itemIn)=> { 
       return <img key={itemIn} className={styles.dogImage} alt="aaa" src={items} width={200} height={200}/>
     })}
   </div>
@@ -17,7 +17,6 @@ export default function Home() {
   const [images, setImages] = useState(null);
 
   const fetchDog = async () => {
-    setImages(null)
     const url = `http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true`;
     let data = await axios.get(url);
     setImages(data.data)
@@ -37,7 +36,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.titleScreen}>Koleksi Anjing Shiba</h1>
-        { images && <Dogs imglink={images} ></Dogs>}
+        { images && <Collection imgData={images} ></Collection>}
       </main>
     </>
   )
