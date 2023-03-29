@@ -14,20 +14,17 @@ function Dogs({ imglink }) {
 }
 
 export default function Home() {
-  const [dogImage, setDogImage] = useState(null);
-  // const [reTitle, setReTitle] = useState("Klik untuk gambar anjing");
+  const [images, setImages] = useState(null);
 
-  const fetchData = async () => {
-    setDogImage(null)
+  const fetchDog = async () => {
+    setImages(null)
     const url = `http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true`;
     let data = await axios.get(url);
-    console.log(data)
-    setDogImage(data.data)
-    // setReTitle("Klik untuk melihat gambar lain")
+    setImages(data.data)
   };
 
   useEffect(() => {
-    fetchData()
+    fetchDog()
   }, []);
 
   return (
@@ -40,7 +37,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.titleScreen}>Koleksi Anjing Shiba</h1>
-        { dogImage && <Dogs imglink={dogImage} ></Dogs>}
+        { images && <Dogs imglink={images} ></Dogs>}
       </main>
     </>
   )
