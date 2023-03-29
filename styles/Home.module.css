@@ -1,0 +1,47 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    width: 100vw;
+    /* padding: 6rem; */
+    height: 100vh;
+}
+
+.titleScreen {
+    font-size: 50px;
+    /* border: 1px solid black; */
+    margin: 20px;
+}
+
+.buttonDog {
+    background-color: #3188e4;
+    padding: 14px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 5px 1px #2873c4;
+}
+
+.buttonDog:hover {
+    background-color: #2b7bd0;
+}
+
+.buttonDog:active {
+    background-color: #3188e4;
+    transform: translateY(5px);
+    box-shadow: 0px 0px 1px #2873c4;
+}
+
+.dogImage {
+    margin: 10px;
+}
+
+.dogContainer {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
