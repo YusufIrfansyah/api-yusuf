@@ -17,7 +17,7 @@ export default function Home() {
   const [images, setImages] = useState(null);
 
   const fetchDog = async () => {
-    const url = `http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true`;
+    const url = `https://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true`;
     let data = await axios.get(url);
     setImages(data.data)
   };
